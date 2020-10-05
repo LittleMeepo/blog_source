@@ -1,5 +1,5 @@
 ---
-title: CSAPP Data Lab
+title: '[CSAPP] Data Lab'
 date: 2020-10-5 16:52
 tags: 
 - CSAPP
