@@ -10,7 +10,7 @@ categories:
 
 ## Data Lab
 
-【踩的坑】在centos7下进行的实验，缺32位gcc库
+【踩的坑】在centos7下进行的实验，缺32位glibc, gcc库
 
 ```bash
 [wangfangcao@wfcserver datalab-handout]$ make
