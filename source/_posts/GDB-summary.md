@@ -19,7 +19,7 @@ categories:
 |Command|
 |---|
 |gdb|
-|gdb <file>|
+|gdb \<file\>|
 
 ### Running and stopping
 |Command|Effect|
