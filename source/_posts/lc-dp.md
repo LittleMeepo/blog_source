@@ -66,8 +66,6 @@ public:
 };
 ```
 
-
-
 #### Leetcode 121 [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
 
 > 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
@@ -198,6 +196,112 @@ public:
             dp[i]=max(dp[i-2]+nums[i],dp[i-1]);
         }
         return dp[size-1];
+    }
+};
+```
+
+#### Leetcode 264 [丑数 II](https://leetcode-cn.com/problems/ugly-number-ii/)
+
+> 编写一个程序，找出第 n 个丑数。
+>
+> 丑数就是质因数只包含 2, 3, 5 的正整数。
+>
+> ```bash
+> 示例:
+> 
+> 输入: n = 10
+> 输出: 12
+> 解释: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 是前 10 个丑数。
+> ```
+
+```c++
+class Solution {
+public:
+    int nthUglyNumber(int n) {
+        if(n<=0)return 0;
+        if(n==1)return 1;
+        int p2=0,p3=0,p5=0;
+        int nums[1691];
+        nums[0]=1;
+        for(int i=1;i<n;i++)
+        {
+             int ugly=min(nums[p2]*2,min(nums[p3]*3,nums[p5]*5));
+             nums[i]=ugly;
+             if(ugly==nums[p2]*2) p2++;
+             if(ugly==nums[p3]*3) p3++;
+             if(ugly==nums[p5]*5) p5++;
+        }
+        return nums[n-1];
+    }
+};
+```
+
+#### Leetcode 300 [最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+
+> 给定一个无序的整数数组，找到其中最长上升子序列的长度。
+
+```c++
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        if(nums.size()==0)
+        {
+            return 0;
+        }
+        int length=nums.size();
+        int maxAns=0;
+        vector<int> dp(length,0);
+        for(int i=0;i<length;i++)
+        {
+            dp[i]=1;
+            for(int j=0;j<i;j++)
+            {
+                if(nums[j]<nums[i])
+                {
+                    dp[i]=max(dp[i],dp[j]+1); 
+                }
+            }
+            maxAns=max(maxAns,dp[i]);
+        }
+        return maxAns;
+    }
+};
+```
+
+#### Leetcode 1143 [最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) (二维DP)
+
+> 给定两个字符串 text1 和 text2，返回这两个字符串的最长公共子序列的长度。
+>
+> 一个字符串的 子序列 是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。
+> 例如，"ace" 是 "abcde" 的子序列，但 "aec" 不是 "abcde" 的子序列。两个字符串的「公共子序列」是这两个字符串所共同拥有的子序列。
+>
+> 若这两个字符串没有公共子序列，则返回 0。
+>
+
+```c++
+class Solution {
+public:
+    int longestCommonSubsequence(string text1, string text2) {
+        int len1=text1.size();
+        int len2=text2.size();
+        if(len1==0||len2==0) return 0;
+        int dp[len1+1][len2+1];
+        memset(dp,0,sizeof(dp));
+
+        for(int i=1;i<=len1;i++)
+        {
+            for(int j=1;j<=len2;j++)
+            {
+                if(text1[i-1]==text2[j-1])
+                {
+                    dp[i][j]=dp[i-1][j-1]+1;
+                }
+                else{
+                    dp[i][j]=max(dp[i][j-1],dp[i-1][j]);
+                }
+            }
+        }    
+        return dp[len1][len2];
     }
 };
 ```
