@@ -17,6 +17,8 @@
 > 输出: [1,3,2]
 > ```
 
+递归解法
+
 ```c++
 class Solution {
 public:
@@ -34,6 +36,48 @@ public:
             root = root->right;
         }
         return res;
+    }
+};
+```
+
+#### Leetcode 95 [不同的二叉搜索树 II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/)
+
+> 给定一个整数 *n*，生成所有由 1 ... *n* 为节点所组成的 **二叉搜索树** 。
+
+```c++
+class Solution {
+public:
+    vector<TreeNode*> generateTrees(int n) {
+        if(n==0){
+            return {};
+        }
+        return generateTrees(1,n);
+    }
+
+    vector<TreeNode*> generateTrees(int start,int end)
+    {
+        if(start>end)
+        {
+            return {nullptr};
+        }
+        vector<TreeNode*> allTrees;
+        for(int i=start;i<=end;i++)
+        {
+            vector<TreeNode*> leftTrees=generateTrees(start,i-1);
+            vector<TreeNode*> rightTrees=generateTrees(i+1,end);
+
+            for(auto &lTree:leftTrees)
+            {
+                for(auto &rTree:rightTrees)
+                {
+                    TreeNode* node=new TreeNode(i);
+                    node->right=rTree;
+                    node->left=lTree;
+                    allTrees.push_back(node);
+                }
+            }
+        }
+        return allTrees;
     }
 };
 ```
