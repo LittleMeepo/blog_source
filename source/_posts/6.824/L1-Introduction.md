@@ -71,9 +71,15 @@ Master节点内保存的数据内容，主要关心两个表单：
 
 当Master节点故障重启，并重建状态，你不会想要从Log的最开始重建状态，因为Log的最开始可能是很久以前。重启时，Master节点会从Log中的最近一个CheckPoint开始恢复，并逐条执行从CheckPoint开始的Log记录。
 
+#### GFS读文件 Read file
+
+有了之前的基础，接下来会列出GFS读和写的步骤，最后，介绍出现故障之后，系统是如何保持正确的行为。
+
+对于读请求来说，意味着应用或者GFS客户端有一个文件名和它想从文件的某个位置读取的偏移量（offset），应用程序会将这些信息发送给Master节点。Master节点会从自己的File表单中查询文件名，得到Chunk ID的数组。因为每个Chunk都是64MB，所以偏移量除以64MB就可以从
+
 ### L4 Primary-Backup Replication
 
-#### Replication
+#### 复制 Replication
 
 这节主要讲了关于容错（Fault-Tolerance）和复制（Replication）的内容。
 
