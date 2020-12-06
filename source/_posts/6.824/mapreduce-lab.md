@@ -1,4 +1,14 @@
-## mapreduce lab
+---
+title: '[6.824] MapReduce Lab'
+date: 2020-12-6 16:53
+tags:
+- 6.824
+- Labs
+categories:
+- 分布式
+---
+
+## MapRudece Lab
 
 ### Master 节点
 

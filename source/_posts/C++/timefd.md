@@ -1,3 +1,10 @@
+title: '[C++] Timefd'
+date: 2020-12-6 17:03
+tags:
+- timefd
+categories:
+- C++
+
 ## timefd
 
 ```c++

@@ -1,3 +1,13 @@
+---
+title: '[LeetCode] 链表'
+date: 2020-12-6 17:07
+tags:
+- 链表
+- LeetCode
+categories:
+- 算法
+---
+
 ## 链表
 
 #### Leetcode 146 [LRU缓存机制](https://leetcode-cn.com/problems/lru-cache/)

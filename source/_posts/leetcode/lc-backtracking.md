@@ -1,3 +1,13 @@
+---
+title: '[LeetCode] 回溯'
+date: 2020-12-6 17:05
+tags:
+- 回溯
+- LeetCode
+categories:
+- 算法
+---
+
 ## 回溯
 
 #### Leetcode 46 [全排列](https://leetcode-cn.com/problems/permutations/)

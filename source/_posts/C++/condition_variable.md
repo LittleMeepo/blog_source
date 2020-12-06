@@ -1,3 +1,11 @@
+title: '[C++] Condition_variable'
+date: 2020-12-6 17:01
+tags:
+- condition_variable
+- mutex
+categories:
+- C++
+
 ## Condition_variable
 
 ```c++

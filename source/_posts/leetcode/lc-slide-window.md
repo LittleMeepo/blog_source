@@ -1,4 +1,14 @@
-## 滑动串口
+---
+title: '[LeetCode] 滑动窗口'
+date: 2020-12-6 17:07
+tags:
+- 滑动窗口
+- LeetCode
+categories:
+- 算法
+---
+
+## 滑动窗口
 
 #### Leetcode 3 [无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 

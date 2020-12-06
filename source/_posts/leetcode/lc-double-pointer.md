@@ -1,3 +1,13 @@
+---
+title: '[LeetCode] 双指针'
+date: 2020-12-6 17:05
+tags:
+- 双指针
+- LeetCode
+categories:
+- 算法
+---
+
 ## 双指针
 
 #### Leetcode 19 [删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/solution/)

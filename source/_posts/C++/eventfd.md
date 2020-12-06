@@ -1,3 +1,11 @@
+title: '[C++] Eventfd & Epoll'
+date: 2020-12-6 17:02
+tags:
+- eventfd
+- epoll
+categories:
+- C++
+
 ## eventfd & epoll
 
 实现跨线程的唤醒。一个线程往fd中写入uint64_t的数据唤醒另一个epoll_wait上的线程
